@@ -1,0 +1,20 @@
+---
+import TechCard from "./TechCard.astro";
+---
+
+<div>
+  <h1
+    class="mt-6 bg-gradient-to-br from-blue-600 from-10% to-teal-500 to-70% bg-clip-text font-mono text-2xl font-bold text-transparent"
+  >
+    Tools
+  </h1>
+  <p class="mt-2">These are the tools that I mostly use on a daily basis.</p>
+  <div class="grid mt-2 grid-cols-3 gap-4 md:grid-cols-6">
+    <TechCard src="/flutter.svg" alt="flutter" />
+    <TechCard src="/react.svg" alt="react" />
+    <TechCard src="/nodejs.svg" alt="nodejs" />
+    <TechCard src="/nextjs.svg" alt="nextjs" />
+    <TechCard src="/vscode.svg" alt="vscode" />
+    <TechCard src="/figma.svg" alt="figma" />
+  </div>
+</div>

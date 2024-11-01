@@ -1,0 +1,77 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../layouts/Navbar.astro";
+import Container from "../components/Container.astro";
+import Hero from "../components/Hero.astro";
+import Footer from "../components/Footer.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+---
+
+<Layout title="Luiza Ferraz - Portfolio">
+  <Navbar />
+  <div id="blob"></div>
+  <div id="blur"></div>
+  <Container>
+    <Hero />
+    <section id="projects" class="scroll-mt-[80px]">
+      <h1 class="mt-6 text-2xl font-bold">Top Projects</h1>
+      <ProjectCard
+        title="MC Donalds's Sample"
+        description="Clients can easily do your own orders in a sample of Mc Donald's site."
+        href="https://react-entrega-s3-template-hamburgueria-luizaleblanc-3p7t2nd65.vercel.app/"
+        stack={["html", "tailwindcss", "figma"]}
+      />
+      <ProjectCard
+        title="Network's Sample"
+        description="Social Network's Sample, with UX/UI utilities."
+        href="https://m2-rede-social-luizaleblanc.vercel.app/"
+        stack={["tailwindcss", "figma"]}
+      />
+      <ProjectCard
+        title="Pet Info"
+        description="Site for pets, focused on front-end and responsive design."
+        href="https://pet-info-template-1-luizaleblanc.vercel.app/"
+        stack={["tailwindcss", "figma", "nextjs"]}
+      />
+      <h1 class="mt-6 text-2xl font-bold">Personal projects</h1>
+      <ProjectCard
+        title="MyTasks"
+        description="Minimalist task manager for daily tasks."
+        href="m1-lista-de-tarefas-luizaleblanc.vercel.app"
+        stack={["nextjs", "figma", "tailwindcss"]}
+      />
+      <ProjectCard
+        title="Gopn.AI"
+        description="Full-Stack Project doing user authentication, product management, cart and more."
+        href="https://github.com/luizaleblanc/gopn-ai"
+        stack={["tailwindcss", "figma", "nextjs", "html"]}
+      />
+    </section>
+    <Footer />
+  </Container>
+</Layout>
+
+<style>
+  #blob {
+    margin-top: 4rem;
+    height: 40vh;
+    width: 40vw;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: linear-gradient(to right, aquamarine, mediumpurple);
+    opacity: 0.8;
+    z-index: -2;
+  }
+
+  #blur {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    backdrop-filter: blur(12vmax);
+  }
+</style>

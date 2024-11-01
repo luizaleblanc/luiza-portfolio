@@ -1,0 +1,88 @@
+<div
+  class="hero-background flex flex-row items-center justify-between gap-4 rounded-xl border bg-white bg-opacity-50 px-10 py-4 dark:border-gray-800 dark:bg-gray-950 dark:bg-opacity-50"
+>
+  <div class="max-w-[400px]">
+    <p class="font-mono text-xl">
+      Hello, my name is
+      <span
+        id="myNameOtherHero"
+        data-value="LUIZA FERRAZ"
+        class="text-2xl font-bold">LUIZA FERRAZ</span
+      >
+       also known as <span class="text-xl font-bold">LU</span>
+    </p>
+    <p class="mt-4 font-mono text-gray-500 dark:text-gray-400">
+      I'm a <span class="font-semibold">software engineer</span>, currently
+      living in <span
+        class="bg-gradient-to-r from-yellow-400 from-10% via-green-400 via-60% to-blue-400 to-90% bg-clip-text text-lg font-bold text-transparent"
+        >Brazil</span
+      >, with nearly 2 years of experience.
+    </p>
+    <a
+      href="#projects"
+      class="mt-6 block w-full rounded-xl border border-black bg-black py-2 text-center font-mono text-lg text-white transition-all hover:border-black hover:bg-white hover:text-black dark:bg-white dark:text-black dark:hover:border-white dark:hover:bg-black dark:hover:text-white"
+      >RESUME</a
+    >
+  </div>
+
+  <img
+    src="/profile.png"
+    alt="Luiza Ferraz profile picture"
+    class="mb-2 max-w-[300px] rounded-full object-contain"
+  />
+</div>
+
+<style>
+  .hero-background {
+    background-image: radial-gradient(
+      rgba(156, 163, 175, 0.4) 8%,
+      transparent 8%
+    );
+    background-size: 3vmin 3vmin;
+    height: 100%;
+  }
+</style>
+
+<script>
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+  let interval: number;
+
+  document.getElementById("myNameOtherHero")!.onmouseover = (event: any) =>
+    hackedTextEffect(event);
+
+  function hackedTextEffect(event: any = null) {
+    let iteration = 0;
+
+    clearInterval(interval);
+
+    interval = setInterval(() => {
+      let target: HTMLElement;
+
+      if (event === null) {
+        target = document.getElementById("myNameOtherHero")!;
+      } else {
+        target = event.target as HTMLElement;
+      }
+
+      target.innerText = target.innerText
+        .split("")
+        .map((_: string, index: number) => {
+          if (index < iteration) {
+            return target.dataset.value![index];
+          }
+
+          return letters[Math.floor(Math.random() * 26)];
+        })
+        .join("");
+
+      if (iteration >= target.dataset.value!.length) {
+        clearInterval(interval);
+      }
+
+      iteration += 1 / 3;
+    }, 42);
+  }
+
+  hackedTextEffect();
+</script>

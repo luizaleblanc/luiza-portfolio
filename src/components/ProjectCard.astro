@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  href: string;
+  stack: string[];
+}
+
+const { title, description, href, stack } = Astro.props;
+---
+
+<a href={href}>
+  <div
+    class="group relative my-2 flex flex-col justify-between gap-2 rounded-xl border bg-white bg-opacity-50 p-4 transition-all hover:ring-1 hover:ring-black dark:border-gray-800 dark:bg-gray-950 dark:bg-opacity-50 hover:dark:ring-white"
+  >
+    <div class="flex flex-1 flex-row justify-between">
+      <span class="text-lg font-bold transition-all group-hover:underline"
+        >{title}</span
+      >
+      <div class="flex flex-row gap-2 items-center justify-center">
+        {
+          stack.map((tech) => {
+            if (tech === "flutter") {
+              return <img src={`/${tech}.svg`} alt={`${tech}`} class="h-[1.125rem] w-[1.125rem]" />;
+            }
+            return <img src={`/${tech}.svg`} alt={`${tech}`} class="h-6 w-6" />;
+          })
+        }
+      </div>
+    </div>
+    <span class="text-sm text-gray-500 dark:text-gray-400">{description}</span>
+  </div>
+</a>

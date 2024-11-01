@@ -1,0 +1,40 @@
+<div>
+  <select
+    name="themeSwitch"
+    id="themeSwitch"
+    class="cursor:pointer block w-full appearance-none rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 hover:ring-1 hover:ring-black focus:border-blue-500 focus:ring-blue-500 dark:border-gray-800 dark:bg-gray-950 dark:text-white dark:placeholder-gray-400 dark:hover:ring-white dark:focus:border-blue-500 dark:focus:ring-blue-500"
+  >
+    <option class="" value="system">System</option>
+    <option class="" value="dark">Dark</option>
+    <option class="" value="light">Light</option>
+  </select>
+</div>
+
+<script>
+  const select = document.getElementById("themeSwitch") as HTMLSelectElement;
+  const theme = localStorage.getItem("theme");
+
+  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+
+  if (theme !== null) {
+    select.value = theme;
+  } else {
+    select.value = systemTheme;
+  }
+
+  function updateTheme(value: string) {
+    const theme = value === "system" ? systemTheme : value;
+    document.documentElement.classList.remove("light", "dark");
+    document.documentElement.classList.add(theme);
+    localStorage.setItem("theme", value);
+  }
+
+  updateTheme(select.value);
+
+  select.addEventListener("change", (event: Event) => {
+    const select = event.target as HTMLSelectElement;
+    updateTheme(select.value);
+  });
+</script>

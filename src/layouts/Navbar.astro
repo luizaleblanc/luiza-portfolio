@@ -1,0 +1,30 @@
+---
+import ThemeSelector from "../components/ThemeSelector.astro";
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
+---
+
+<div
+  class="sticky bottom-auto left-0 right-0 top-0 z-50 mx-auto bg-white bg-opacity-40 backdrop-blur-md dark:bg-black dark:bg-opacity-40"
+>
+  <div
+    class="mx-auto flex w-full max-w-[900px] px-5 py-3 flex-row items-center justify-between"
+  >
+    {
+      currentPath === "" ? (
+        <a
+          href="mailto:luizaa.fq@gmail.com"
+          class="p-2 font-mono text-sm underline"
+        >
+          <button>luizaa.fq@gmail.com</button>
+        </a>
+      ) : (
+        <a href="/" class="p-2 font-mono text-sm underline">
+          Go back
+        </a>
+      )
+    }
+    <ThemeSelector />
+  </div>
+</div>

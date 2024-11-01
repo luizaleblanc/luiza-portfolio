@@ -1,0 +1,49 @@
+---
+import "../utils.css";
+---
+
+<div>
+  <div id="blob"></div>
+  <div id="blur"></div>
+  <div class="not-found flex flex-col items-center">
+    <h1 class="text-center text-2xl font-bold text-gray-800">404</h1>
+    <h1 class="text-center text-xl mt-1 text-gray-800">Not found</h1>
+    <p class="text-center mt-4 text-gray-800 max-w-xs">
+      Whoa, for sure this seems like an quiet place, but maybe it's better to go back.
+    </p>
+    <a href="/" class="text-center text-sm mt-4 text-gray-800 hover:underline bg-white rounded py-2 px-4 border border-black hover:border-gray-800 hover:bg-gray-100 transition-all">Go back</a>
+  </div>
+</div>
+
+<style>
+  .not-found {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    marginright: -50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #blob {
+    margin-top: 4rem;
+    height: 40vh;
+    width: 40vw;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: linear-gradient(to right, wheat, salmon);
+    opacity: 0.8;
+    z-index: -2;
+  }
+
+  #blur {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    backdrop-filter: blur(12vmax);
+  }
+</style>

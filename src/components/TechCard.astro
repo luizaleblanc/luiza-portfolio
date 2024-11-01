@@ -1,0 +1,12 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+}
+
+const { src, alt } = Astro.props;
+---
+
+<div class="rounded-xl border aspect-square p-5 dark:border-gray-800 dark:bg-gray-950">
+  <img class="aspect-square w-full" src={src} alt={alt} />
+</div>
