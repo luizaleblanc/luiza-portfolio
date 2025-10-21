@@ -1,7 +1,7 @@
 {
-  "name": "nikola-tesla",
+  "name": "lu-official-portfolio",
+  "version": "1.0.0",
   "type": "module",
-  "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -12,17 +12,18 @@
     "@astrojs/react": "^4.2.5",
     "@astrojs/vercel": "^8.1.4",
     "@paper-design/shaders-react": "^0.0.29",
-    "@tailwindcss/vite": "^4.1.4",
+    "@tailwindcss/vite": "^4.1.15",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "astro": "^5.7.5",
     "astro-loading-indicator": "^0.7.0",
     "clsx": "^2.1.1",
+    "install": "^0.13.0",
     "motion": "^12.9.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "sharp": "^0.34.1",
-    "tailwindcss": "^4.1.4"
+    "tailwindcss": "^4.1.15"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16"
