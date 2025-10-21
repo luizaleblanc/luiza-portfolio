@@ -1,0 +1,30 @@
+---
+import clsx from "clsx/lite";
+
+type Props = {
+  href?: string;
+  className?: string;
+  variant?: "primary" | "secondary";
+};
+
+const { href, variant = "primary", className } = Astro.props as Props;
+
+const defaultMessage = "Hey, Luiza! I'm here from your Portfolio. Let's work together!";
+const encodedMsg = encodeURIComponent(defaultMessage);
+const defaultHref = `https://wa.me/5583991429201?text=${encodedMsg}`;
+
+const finalHref = href ?? defaultHref;
+
+const classes = clsx(
+  "w-fit text-base sm:text-2xl px-5 py-2 rounded-full transition-all duration-300 ease-in-out whitespace-nowrap",
+  variant === "primary" &&
+    "text-zinc-900 bg-zinc-100 hover:outline-2 outline-offset-2 outline-zinc-100",
+  variant === "secondary" &&
+    "text-zinc-100 hover:text-white bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20",
+  className
+);
+---
+
+<a href={finalHref} target="_blank" rel="noopener noreferrer" class={classes}>
+  <slot />
+</a>
