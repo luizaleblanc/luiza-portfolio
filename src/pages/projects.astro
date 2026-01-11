@@ -4,7 +4,8 @@ import H1 from "../components/h1.astro";
 import InfoLayout from "../layouts/InfoLayout.astro";
 import ACGenerator from "../assets/lanzarotto.png";
 import FluidPropulsion from "../assets/med-sass.png";
-import ElectricMotor from "../assets/pet-info.png";
+import VoiceAIMessage from "../assets/voice-ai-assistant.png";
+import OrganizaAI from "../assets/organiza-ai.jpeg";
 
 const projects = [
   {
@@ -22,11 +23,19 @@ const projects = [
     link: "https://github.com/luizaleblanc/sass-med",
   },
   {
-    title: "PetInfo",
+    title: "Voice AI Message",
     description:
-      "A web application for pet lovers. The project was developed with React and aims to provide a platform where users can upload their pets pics, also create profiles and share moments.",
-    image: ElectricMotor,
-    link: "https://github.com/luizaleblanc/pet-info",
+      "An AI-powered voice assistant designed to enhance communication. This project leverages artificial intelligence to interpret and respond to voice commands, providing a seamless messaging experience.",
+    image: VoiceAIMessage,
+    link: "https://github.com/luizaleblanc/voice-ai-assistant",
+  },
+  {
+    title: "Organiza AI",
+    description:
+      "An intelligent invoice organizer that uses AI to read and interpret invoices, presenting data in charts and topics to show your largest and smallest expenses.",
+    image: OrganizaAI,
+    link: "https://github.com/luizaleblanc/organiza-ia",
+    badge: "In Development",
   },
 ];
 ---
@@ -56,8 +65,15 @@ const projects = [
               </div>
             </a>
 
-            <div class="max-w-3xl px-6 mt-6">
-              <h2 class="text-3xl font-semibold text-zinc-100 mb-3">{project.title}</h2>
+            <div class="max-w-3xl px-6 mt-6 flex flex-col items-center">
+              <div class="flex items-center justify-center gap-3 mb-3">
+                <h2 class="text-3xl font-semibold text-zinc-100">{project.title}</h2>
+                {project.badge && (
+                  <span class="px-2 py-1 text-xs font-medium text-zinc-400 bg-zinc-800 border border-zinc-700 rounded-md">
+                    {project.badge}
+                  </span>
+                )}
+              </div>
               <p class="text-base text-zinc-300 leading-relaxed">{project.description}</p>
             </div>
           </li>
