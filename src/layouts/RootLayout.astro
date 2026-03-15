@@ -5,10 +5,9 @@ import { ClientRouter } from "astro:transitions";
 import LoadingIndicator from "astro-loading-indicator/component";
 
 const { title, description } = Astro.props;
-
 const defaultTitle = "Luiza LeBlanc";
 const defaultDescription =
-  "Luiza LeBlanc is a Serbian-American inventor, electrical engineer, mechanical engineer, and futurist who is best known for his contributions to the design of the modern alternating current (AC) electricity supply system.";
+  "Luiza LeBlanc is a Bilingual Software Developer (English and Portuguese), with several works in web front-end. Computer Science Student, graduated on Full-Stack Development.";
 ---
 
 <!doctype html>
@@ -20,12 +19,10 @@ const defaultDescription =
     <meta name="generator" content={Astro.generator} />
     <title>{title ?? defaultTitle}</title>
     <meta name="description" content={description ?? defaultDescription} />
-
-    <meta property="og:url" content="https://nikola.fluidinterfaces.com/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={defaultTitle} />
     <meta property="og:description" content={defaultDescription} />
-    <meta property="og:image" content="/social-image.jpg" />
+    <meta property="og:image" content="/social-image.png" />
 
     <Font cssVariable="--font-geist" preload />
     <ClientRouter />
@@ -33,6 +30,30 @@ const defaultDescription =
   </head>
   <body class="font-sans min-h-screen bg-zinc-900">
     <slot />
+
+    <script>
+      import { dict } from "../i18n/dict";
+
+      function initTranslation() {
+        const savedLang = localStorage.getItem("app_lang");
+        const browserLang = navigator.language.slice(0, 2);
+        const currentLang = savedLang || (browserLang === "pt" ? "pt" : "en");
+
+        localStorage.setItem("app_lang", currentLang);
+
+        const elements = document.querySelectorAll("[data-i18n]");
+
+        elements.forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          if (key && (dict as any)[currentLang] && (dict as any)[currentLang][key]) {
+            el.textContent = (dict as any)[currentLang][key];
+          }
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", initTranslation);
+      document.addEventListener("astro:page-load", initTranslation);
+    </script>
   </body>
 </html>
 

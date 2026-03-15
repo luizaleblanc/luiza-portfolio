@@ -1,6 +1,7 @@
 ---
 import clsx from "clsx";
 import ExternalLink from "./external-link.astro";
+import TranslateText from "./TranslateText";
 
 const pathname = Astro.url.pathname;
 ---
@@ -34,7 +35,7 @@ const pathname = Astro.url.pathname;
         aria-hidden="true"
         class={clsx(
           "w-6 h-6",
-          pathname === "/projects" ? "text-zinc-100" : "text-zinc-500 group-hover:text-zinc-100"
+          pathname === "/projects" ? "text-zinc-100" : "text-zinc-500 group-hover:text-zinc-100",
         )}
       >
         <title>Projects</title>
@@ -54,6 +55,10 @@ const pathname = Astro.url.pathname;
     </ExternalLink>
   </div>
 
-  <ExternalLink href="/about" openNewTab={false}>About</ExternalLink>
-  <ExternalLink href="/contact" openNewTab={false}>Contact</ExternalLink>
+  <ExternalLink href="/about" openNewTab={false}>
+    <TranslateText pt="Sobre" en="About" client:load />
+  </ExternalLink>
+  <ExternalLink href="/contact" openNewTab={false}>
+    <TranslateText pt="Contato" en="Contact" client:load />
+  </ExternalLink>
 </footer>

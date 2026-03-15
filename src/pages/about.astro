@@ -1,39 +1,81 @@
 ---
 import H1 from "../components/h1.astro";
 import InfoLayout from "../layouts/InfoLayout.astro";
+import TranslateText from "../components/TranslateText";
 ---
 
 <InfoLayout>
   <div class="p-4 sm:pt-8 sm:px-12 pb-20 min-h-dvh flex flex-col justify-between gap-32">
     <div class="space-y-4 sm:space-y-12">
-      <H1> Get to know Luiza LeBlanc </H1>
+      <H1>
+        <TranslateText pt="Conheça Luiza LeBlanc" en="Meet Luiza LeBlanc" client:load />
+      </H1>
 
       <p class="text-xl xl:text-2xl text-zinc-500 text-balance">
-        <a
-          href="https://en.wikipedia.org/wiki/Nikola_Tesla"
-          target="_blank"
-          class="underline underline-offset-4 decoration-zinc-400 hover:text-zinc-50 hover:decoration-zinc-200"
-        >
-        </a>
-        Bilingual Software Developer (English and Portuguese), with several works in web front-end. Computer
-        Science Student, graduated on Full-Stack Development. Adept in delivering solutions focused on
-        user experience. Eager to apply my knowledge in a practical setting and impact people through
-        technology. Curiosity moves me, passionate about learning new things and solving problems.
+        <TranslateText
+          pt="Desenvolvedora de software Front-end, especializada no ecossistema JavaScript, com experiência na construção de aplicações web modernas utilizando React, JavaScript e TypeScript. Possui forte domínio em manipulação de DOM e programação orientada a objetos, além de experiência sólida na integração com APIs REST e colaboração em documentação com equipes de backend."
+          en="Front-end software developer, specialized in the JavaScript ecosystem, with experience in building modern web applications using React, JavaScript, and TypeScript. Has a strong domain over DOM manipulation and object-oriented programming, along with solid experience integrating REST APIs and collaborating on documentation with backend teams."
+          client:load
+        />
+        <br /><br />
+        <TranslateText
+          pt="Profissional bilíngue, com fluência em inglês e experiência em ambientes internacionais. Atualmente aprofunda conhecimentos em backend, arquitetura de aplicações e cloud, com estudos em Python, Java, AWS, CI/CD e Docker, buscando evoluir como engenheira de software e contribuir para o desenvolvimento de aplicações escaláveis."
+          en="Bilingual professional, fluent in English with experience in international environments. Currently deepening knowledge in backend, application architecture, and cloud, with studies in Python, Java, AWS, CI/CD, and Docker, aiming to evolve as a software engineer and contribute to the development of scalable applications."
+          client:load
+        />
       </p>
     </div>
 
     <div class="space-y-2 text-base sm:text-lg">
       <h2 class="px-4 text-zinc-400 underline underline-offset-4 decoration-zinc-500">
-        Achievements
+        <TranslateText pt="Conquistas" en="Achievements" client:load />
       </h2>
 
       <ul class="px-4 text-zinc-400 list-disc list-outside">
-        <li>Full-Stack Engineering - Kenzie Academy (2024)</li>
-        <li>Computer Science - Maurício de Nassau University (Expected on 2028)</li>
-        <li>CC50 - Harvard University (2025)</li>
-        <li>Generative AI's - Santander with MIT (2025)</li>
-        <li>Digital Transformation - Santander with MIT (2025)</li>
-        <li>Graphic Design - Orango (2025)</li>
+        <li>
+          <TranslateText
+            pt="Engenharia Full-Stack - Kenzie Academy (2023-2024)"
+            en="Full-Stack Engineering - Kenzie Academy (2023-2024)"
+            client:load
+          />
+        </li>
+        <li>
+          <TranslateText
+            pt="Ciência da Computação - Uninassau (Previsão 2028)"
+            en="Computer Science - Uninassau (Expected 2028)"
+            client:load
+          />
+        </li>
+        <li>Node.JS with Express - Cursa (2026)</li>
+        <li>Prompt Engineering - ChatGPT (2026)</li>
+        <li>
+          <TranslateText
+            pt="CC50 - Universidade de Harvard (2025)"
+            en="CS50 - Harvard University (2025)"
+            client:load
+          />
+        </li>
+        <li>
+          <TranslateText
+            pt="IAs Generativas - Santander com MIT (2025)"
+            en="Generative AI - Santander with MIT (2025)"
+            client:load
+          />
+        </li>
+        <li>
+          <TranslateText
+            pt="Transformação Digital - Santander com MIT (2025)"
+            en="Digital Transformation - Santander with MIT (2025)"
+            client:load
+          />
+        </li>
+        <li>
+          <TranslateText
+            pt="Design Gráfico - Orango (2025)"
+            en="Graphic Design - Orango (2025)"
+            client:load
+          />
+        </li>
       </ul>
     </div>
   </div>

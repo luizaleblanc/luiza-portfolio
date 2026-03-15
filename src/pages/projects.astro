@@ -1,32 +1,50 @@
 ---
-import { Image } from "astro:assets";
 import H1 from "../components/h1.astro";
 import InfoLayout from "../layouts/InfoLayout.astro";
-import ACGenerator from "../assets/lanzarotto.png";
-import FluidPropulsion from "../assets/med-sass.png";
-import ElectricMotor from "../assets/pet-info.png";
+import ProjectsList from "../components/ProjectsList";
 
-const projects = [
+import HealthCareImg from "../assets/healthcare.png";
+import VoiceAIMessage from "../assets/voice-ai-assistant.png";
+import ACGenerator from "../assets/lanzarotto.png";
+import OrganizaAI from "../assets/organiza-ai.jpeg";
+
+const projectsData = [
+  {
+    title: "HealthCare",
+    descriptionEn:
+      "Automated ETL pipeline for extracting data from the ANS and an interactive dashboard focused on analyzing health insurance operators' expenses. It uses Python for data extraction and transformation, MySQL as the database, Vue.js for building the dashboard, and Docker for containerization.",
+    descriptionPt:
+      "Pipeline ETL automatizado para extração de dados da ANS e um dashboard interativo focado em analisar as despesas das operadoras de saúde. Utiliza Python para a extração e transformação dos dados, MySql como base de dados, Vue.js para a construção do dashboard e Docker para containerização.",
+    imageSrc: HealthCareImg.src,
+    link: "https://github.com/luizaleblanc/intuitive_care",
+  },
+  {
+    title: "Voice AI Message",
+    descriptionEn:
+      "A voice assistant that consumes the ChatGPT 3.5 API with Whisper, designed as a voice recorder to facilitate recordings. It uses React for the user interface with advanced JavaScript concepts, Node.js for the backend and API integration, offering an efficient and intuitive voice recording experience.",
+    descriptionPt:
+      "Um assistente de voz que consome a API do ChatGPT 3.5 com Whisper, concebido como um gravador de voz para facilitar gravações. Utiliza React para a interface do usuário com noções avançadas de JavaScript, Node.js para o backend e integração com API, oferecendo uma experiência de gravação de voz eficiente e intuitiva.",
+    imageSrc: VoiceAIMessage.src,
+    link: "https://github.com/luizaleblanc/voice-ai-assistant",
+  },
   {
     title: "Lanzarotto",
-    description:
-      "A comprehensive admin panel built with Angular 17 and styled with Tailwind CSS. The application provides a user-friendly interface for managing various business entities, including users, musicians, service requests, finances, and collaborator access control.",
-    image: ACGenerator,
+    descriptionEn:
+      "A comprehensive admin panel built with Angular 17 and styled with Tailwind CSS. The application consists of a Figma-to-code implementation, providing a user-friendly interface for managing entities and business operations.",
+    descriptionPt:
+      "Um painel de administração completo construído com Angular 17 e estilizado com Tailwind CSS. A aplicação consiste em um Figma-to-code, e fornece uma interface amigável para gerenciar entidades e gerenciamentos de negócios.",
+    imageSrc: ACGenerator.src,
     link: "https://github.com/luizaleblanc/lanzarotto-angular",
   },
   {
-    title: "MedSass",
-    description:
-      "MedSaaS is a modern, responsive web application designed to streamline medical practice management. It provides a clean and intuitive dashboard for healthcare professionals to manage patients, schedule appointments, and stay updated with real-time notifications.",
-    image: FluidPropulsion,
-    link: "https://github.com/luizaleblanc/sass-med",
-  },
-  {
-    title: "PetInfo",
-    description:
-      "A web application for pet lovers, a social networking for pet lovers. The project was developed with React and aims to provide a platform where users can not only buy items for their pets but also create profiles for them and share moments.",
-    image: ElectricMotor,
-    link: "https://github.com/luizaleblanc/pet-info",
+    title: "Organiza AI",
+    descriptionEn:
+      "An intelligent invoice organizer built with Angular 17 and Tailwind CSS, which uses AI integration to read and interpret invoices, presenting data in charts using Chart.js, and data-interpreted topics to show the largest and smallest expenses, in addition to pointing out the area where spending should be controlled.",
+    descriptionPt:
+      "Um organizador inteligente de faturas feito com Angular 17 e Tailwind.CSS, que utiliza integração com IA para ler e interpretar faturas, apresentando: dados em gráficos em Charts.js, e tópicos por interpretação de dados para mostrar maiores e menores despesas, além de apontar a área onde os gastos devem ser controlados.",
+    imageSrc: OrganizaAI.src,
+    link: "https://github.com/luizaleblanc/organiza-ia",
+    badge: "In Development",
   },
 ];
 ---
@@ -35,34 +53,9 @@ const projects = [
   <div
     class="flex flex-col items-center justify-center min-h-screen py-20 px-4 sm:px-12 bg-zinc-900"
   >
-    <H1>Projects</H1>
-
-    <ul class="w-full max-w-6xl mt-12 flex flex-col items-center gap-24">
-      {
-        projects.map((project) => (
-          <li class="flex flex-col items-center text-center w-full">
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group w-full flex justify-center"
-            >
-              <div class="w-full flex justify-center overflow-hidden rounded-2xl shadow-2xl bg-zinc-800 hover:bg-zinc-700 transition-all duration-300">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  class="w-full max-w-5xl h-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-            </a>
-
-            <div class="max-w-3xl px-6 mt-6">
-              <h2 class="text-3xl font-semibold text-zinc-100 mb-3">{project.title}</h2>
-              <p class="text-base text-zinc-300 leading-relaxed">{project.description}</p>
-            </div>
-          </li>
-        ))
-      }
-    </ul>
+    <H1>Projetos</H1>
+    <div class="mt-12 w-full max-w-6xl">
+      <ProjectsList client:load projects={projectsData} />
+    </div>
   </div>
 </InfoLayout>

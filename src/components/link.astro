@@ -1,13 +1,14 @@
 ---
 import clsx from "clsx/lite";
+import type { HTMLAttributes } from "astro/types";
 
-type Props = {
+type Props = HTMLAttributes<"a"> & {
   href?: string;
   className?: string;
   variant?: "primary" | "secondary";
 };
 
-const { href, variant = "primary", className } = Astro.props as Props;
+const { href, variant = "primary", className, ...rest } = Astro.props;
 
 const defaultMessage = "Hey, Luiza! I'm here from your Portfolio. Let's work together!";
 const encodedMsg = encodeURIComponent(defaultMessage);
@@ -21,10 +22,10 @@ const classes = clsx(
     "text-zinc-900 bg-zinc-100 hover:outline-2 outline-offset-2 outline-zinc-100",
   variant === "secondary" &&
     "text-zinc-100 hover:text-white bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20",
-  className
+  className,
 );
 ---
 
-<a href={finalHref} target="_blank" rel="noopener noreferrer" class={classes}>
+<a href={finalHref} target="_blank" rel="noopener noreferrer" class={classes} {...rest}>
   <slot />
 </a>
