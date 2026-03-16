@@ -2,8 +2,7 @@
 
 Portfólio oficial desenvolvido para apresentar meus projetos, habilidades e trajetória como Desenvolvedora de Software Front-end, especializada no ecossistema JavaScript, React e TypeScript.
 
-**Acesse online:** [luiza-portfolio.vercel.app](https://luiza-portfolio.vercel.app) *(ou insira seu link final do Vercel aqui)*
-
+**Acesse online:** https://my-portfolio-main-weld-pi.vercel.app
 ---
 
 ## Nova Atualização: Arquitetura Bilíngue Dinâmica
