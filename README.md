@@ -3,7 +3,7 @@
 Portfólio oficial desenvolvido para apresentar meus projetos, habilidades e trajetória como Desenvolvedora de Software Front-end, especializada no ecossistema JavaScript, React e TypeScript.
 
 **Acesse online:** https://my-portfolio-main-weld-pi.vercel.app
----
+
 
 ## Nova Atualização: Arquitetura Bilíngue Dinâmica
 O portfólio agora conta com um sistema de internacionalização (i18n) inteligente construído do zero. 
