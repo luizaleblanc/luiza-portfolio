@@ -1,0 +1,68 @@
+---
+import H1 from "../components/h1.astro";
+import InfoLayout from "../layouts/InfoLayout.astro";
+import TranslateText from "../components/TranslateText";
+---
+
+<InfoLayout>
+  <div class="p-4 sm:pt-8 sm:px-12 pb-20 min-h-dvh flex flex-col justify-between gap-32">
+    <div class="space-y-4 sm:space-y-12">
+      <H1>
+        <TranslateText pt="Conheça Luiza LeBlanc" en="Meet Luiza LeBlanc" client:load />
+      </H1>
+
+      <p class="text-xl xl:text-2xl text-zinc-500 text-balance">
+        <TranslateText
+          pt="Engenheira de Software Full-Stack com sólida experiência em arquitetura de sistemas e práticas avançadas de DevOps. Possui domínio profundo no ecossistema JavaScript (React, Angular, Vue, Node.js e TypeScript), desenvolvendo interfaces de alta fidelidade integradas a backends robustos em Java e Python. Sua engenharia foca na padronização de código, otimização de performance, práticas de Clean Code e integração segura de APIs RESTful."
+          en="Full-Stack Software Engineer with solid expertise in system architecture and advanced DevOps practices. I possess deep knowledge of the JavaScript ecosystem (React, Angular, Node.js, and TypeScript), developing high-fidelity interfaces integrated with robust Java and Python backends. My engineering principles focus on code standardization, performance optimization, and secure integration of RESTful APIs."
+          client:load
+        />
+        <br /><br />
+        <TranslateText
+          pt="No âmbito de Operações e Infraestrutura, atua diretamente na automação de processos de integração e entrega contínuas (CI/CD) utilizando GitHub Actions e GitLab CI, além da orquestração de ambientes com Kubernetes e containerização com Docker. Dimensiona infraestruturas resilientes em nuvem empregando AWS e Terraform (IaC). Como resultado da adoção da cultura DevOps, liderou iniciativas que alcançaram cerca de 30% de aumento na frequência de deploys, 25% de redução no tempo de build e queda de 20% nas falhas em produção."
+          en="Within Operations and Infrastructure, I act directly in automating continuous integration and delivery (CI/CD) processes using GitHub Actions and GitLab CI, alongside environment orchestration with Docker and Kubernetes. I scale resilient cloud infrastructures leveraging AWS and Terraform (IaC). As a result of DevOps culture adoption, I led initiatives that achieved a roughly 30% increase in deployment frequency, a 25% reduction in build time, and a 20% drop in production failures."
+          client:load
+        />
+      </p>
+    </div>
+
+    <div class="space-y-2 text-base sm:text-lg">
+      <h2 class="px-4 text-zinc-400 underline underline-offset-4 decoration-zinc-500">
+        <TranslateText pt="Conquistas" en="Achievements" client:load />
+      </h2>
+
+      <ul class="px-4 text-zinc-400 list-disc list-outside">
+        <li>
+          <TranslateText
+            pt="Engenharia Full-Stack - Kenzie Academy (2023-2024)"
+            en="Full-Stack Engineering - Kenzie Academy (2023-2024)"
+            client:load
+          />
+        </li>
+        <li>
+          <TranslateText
+            pt="Ciência da Computação - Uninassau (Previsão 2028)"
+            en="Computer Science - Uninassau (Expected 2028)"
+            client:load
+          />
+        </li>
+        <li>Node.js com Express - Cursa (2026)</li>
+        <li>Prompt Engineering - DataWay (2026)</li>
+        <li>
+          <TranslateText
+            pt="CC50 - Universidade de Harvard (2025)"
+            en="CS50 - Harvard University (2025)"
+            client:load
+          />
+          <li>
+          <TranslateText
+            pt="Python — Santander (2026)"
+            en="Python — Santander (2026)"
+            client:load
+          />
+        </li>
+        </li>
+      </ul>
+    </div>
+  </div>
+</InfoLayout>

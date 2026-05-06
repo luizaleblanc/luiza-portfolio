@@ -1,0 +1,61 @@
+---
+import H1 from "../components/h1.astro";
+import InfoLayout from "../layouts/InfoLayout.astro";
+import ProjectsList from "../components/ProjectsList";
+
+import HealthCareImg from "../assets/healthcare.png";
+import VoiceAIMessage from "../assets/voice-ai-assistant.png";
+import ACGenerator from "../assets/lanzarotto.png";
+import OrganizaAI from "../assets/organiza-ai.jpeg";
+
+const projectsData = [
+  {
+    title: "HealthCare",
+    descriptionEn:
+      "Automated ETL pipeline for extracting data from the ANS and an interactive dashboard focused on analyzing health insurance operators' expenses. It uses Python for data extraction and transformation, MySQL as the database, Vue.js for building the dashboard, and Docker for containerization.",
+    descriptionPt:
+      "Pipeline ETL automatizado para extração de dados da ANS e um dashboard interativo focado em analisar as despesas das operadoras de saúde. Utiliza Python para a extração e transformação dos dados, MySql como base de dados, Vue.js para a construção do dashboard e Docker para containerização.",
+    imageSrc: HealthCareImg.src,
+    link: "https://github.com/luizaleblanc/intuitive_care",
+  },
+  {
+    title: "Voice AI Message",
+    descriptionEn:
+      "A voice assistant that consumes the ChatGPT 3.5 API with Whisper, designed as a voice recorder to facilitate recordings. It uses React for the user interface with advanced JavaScript concepts, Node.js for the backend and API integration, offering an efficient and intuitive voice recording experience.",
+    descriptionPt:
+      "Um assistente de voz que consome a API do ChatGPT 3.5 com Whisper, concebido como um gravador de voz para facilitar gravações. Utiliza React para a interface do usuário com noções avançadas de JavaScript, Node.js para o backend e integração com API, oferecendo uma experiência de gravação de voz eficiente e intuitiva.",
+    imageSrc: VoiceAIMessage.src,
+    link: "https://github.com/luizaleblanc/voice-ai-assistant",
+  },
+  {
+    title: "Lanzarotto",
+    descriptionEn:
+      "A comprehensive admin panel built with Angular 17 and styled with Tailwind CSS. The application consists of a Figma-to-code implementation, providing a user-friendly interface for managing entities and business operations.",
+    descriptionPt:
+      "Um painel de administração completo construído com Angular 17 e estilizado com Tailwind CSS. A aplicação consiste em um Figma-to-code, e fornece uma interface amigável para gerenciar entidades e gerenciamentos de negócios.",
+    imageSrc: ACGenerator.src,
+    link: "https://github.com/luizaleblanc/lanzarotto-angular",
+  },
+  {
+    title: "Organiza AI",
+    descriptionEn:
+      "An intelligent invoice organizer built with Angular 17 and Tailwind CSS, which uses AI integration to read and interpret invoices, presenting data in charts using Chart.js, and data-interpreted topics to show the largest and smallest expenses, in addition to pointing out the area where spending should be controlled.",
+    descriptionPt:
+      "Um organizador inteligente de faturas feito com Angular 17 e Tailwind.CSS, que utiliza integração com IA para ler e interpretar faturas, apresentando: dados em gráficos em Charts.js, e tópicos por interpretação de dados para mostrar maiores e menores despesas, além de apontar a área onde os gastos devem ser controlados.",
+    imageSrc: OrganizaAI.src,
+    link: "https://github.com/luizaleblanc/organiza-ia",
+    badge: "In Development",
+  },
+];
+---
+
+<InfoLayout>
+  <div
+    class="flex flex-col items-center justify-center min-h-screen py-20 px-4 sm:px-12 bg-zinc-900"
+  >
+    <H1>Projetos</H1>
+    <div class="mt-12 w-full max-w-6xl">
+      <ProjectsList client:load projects={projectsData} />
+    </div>
+  </div>
+</InfoLayout>
