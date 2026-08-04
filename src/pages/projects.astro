@@ -4,9 +4,8 @@ import InfoLayout from "../layouts/InfoLayout.astro";
 import ProjectsList from "../components/ProjectsList";
 
 import HealthCareImg from "../assets/healthcare.png";
-import VoiceAIMessage from "../assets/voice-ai-assistant.png";
-import ACGenerator from "../assets/lanzarotto.png";
-import OrganizaAI from "../assets/organiza-ai.jpeg";
+import OrganizaAI from "../assets/organiza-ia.png";
+import StartCRM from "../assets/start-crm.png";
 
 const projectsData = [
   {
@@ -19,32 +18,23 @@ const projectsData = [
     link: "https://github.com/luizaleblanc/intuitive_care",
   },
   {
-    title: "Voice AI Message",
-    descriptionEn:
-      "A voice assistant that consumes the ChatGPT 3.5 API with Whisper, designed as a voice recorder to facilitate recordings. It uses React for the user interface with advanced JavaScript concepts, Node.js for the backend and API integration, offering an efficient and intuitive voice recording experience.",
-    descriptionPt:
-      "Um assistente de voz que consome a API do ChatGPT 3.5 com Whisper, concebido como um gravador de voz para facilitar gravações. Utiliza React para a interface do usuário com noções avançadas de JavaScript, Node.js para o backend e integração com API, oferecendo uma experiência de gravação de voz eficiente e intuitiva.",
-    imageSrc: VoiceAIMessage.src,
-    link: "https://github.com/luizaleblanc/voice-ai-assistant",
-  },
-  {
-    title: "Lanzarotto",
-    descriptionEn:
-      "A comprehensive admin panel built with Angular 17 and styled with Tailwind CSS. The application consists of a Figma-to-code implementation, providing a user-friendly interface for managing entities and business operations.",
-    descriptionPt:
-      "Um painel de administração completo construído com Angular 17 e estilizado com Tailwind CSS. A aplicação consiste em um Figma-to-code, e fornece uma interface amigável para gerenciar entidades e gerenciamentos de negócios.",
-    imageSrc: ACGenerator.src,
-    link: "https://github.com/luizaleblanc/lanzarotto-angular",
-  },
-  {
     title: "Organiza AI",
     descriptionEn:
-      "An intelligent invoice organizer built with Angular 17 and Tailwind CSS, which uses AI integration to read and interpret invoices, presenting data in charts using Chart.js, and data-interpreted topics to show the largest and smallest expenses, in addition to pointing out the area where spending should be controlled.",
+      "Organiza AI is a full-stack application for personal finance management with Artificial Intelligence, built with Java, Spring Boot, Spring AI, and Next.js. The platform uses voice commands and Natural Language Processing (NLP) to interpret requests, execute financial transactions, and provide audio responses, in addition to offering authentication and a financial dashboard.",
     descriptionPt:
-      "Um organizador inteligente de faturas feito com Angular 17 e Tailwind.CSS, que utiliza integração com IA para ler e interpretar faturas, apresentando: dados em gráficos em Charts.js, e tópicos por interpretação de dados para mostrar maiores e menores despesas, além de apontar a área onde os gastos devem ser controlados.",
+      "Organiza AI é uma aplicação full-stack para gestão de finanças pessoais com Inteligência Artificial, desenvolvida com Java, Spring Boot, Spring AI e Next.js. A plataforma utiliza comandos de voz e Processamento de Linguagem Natural (NLP) para interpretar solicitações, executar transações financeiras e fornecer respostas em áudio, além de oferecer autenticação e dashboard financeiro.",
     imageSrc: OrganizaAI.src,
-    link: "https://github.com/luizaleblanc/organiza-ia",
-    badge: "In Development",
+    link: "https://github.com/luizaleblanc/organiza-ai",
+  },
+  {
+    title: "StartCRM",
+    descriptionEn:
+      "Technical leadership, front-end architecture, UX, and MVP development for Start CRM, using Next.js 16, TypeScript, and Tailwind CSS. Implementation of a proprietary Design System, integrated BFF, authentication, dashboards, Leads Kanban, and Business Pipeline, with an architecture ready for seamless integration with a real back-end. SPA published on Vercel, focused on scalability, maintainability, and user experience.",
+    descriptionPt:
+      "Liderança técnica, arquitetura de front-end, UX e desenvolvimento do MVP do Start CRM, utilizando Next.js 16, TypeScript e Tailwind CSS. Implementação de Design System proprietário, BFF integrado, autenticação, dashboards, Kanban de Leads e Pipeline de Negócios, com arquitetura preparada para integração transparente com back-end real. Publicação da SPA no Vercel, com foco em escalabilidade, manutenção e experiência do usuário.",
+    imageSrc: StartCRM.src,
+    link: "https://github.com/luizaleblanc/start-crm",
+    badge: "In Production",
   },
 ];
 ---

@@ -11,24 +11,48 @@ import TranslateText from "../components/TranslateText";
         <TranslateText pt="Conheça Luiza LeBlanc" en="Meet Luiza LeBlanc" client:load />
       </H1>
 
-      <p class="text-xl xl:text-2xl text-zinc-500 text-balance">
-        <TranslateText
-          pt="Desenvolvedora de software Front-end, especializada no ecossistema JavaScript, com experiência na construção de aplicações web modernas utilizando React, JavaScript e TypeScript. Possui forte domínio em manipulação de DOM e programação orientada a objetos, além de experiência sólida na integração com APIs REST e colaboração em documentação com equipes de backend."
-          en="Front-end software developer, specialized in the JavaScript ecosystem, with experience in building modern web applications using React, JavaScript, and TypeScript. Has a strong domain over DOM manipulation and object-oriented programming, along with solid experience integrating REST APIs and collaborating on documentation with backend teams."
-          client:load
-        />
-        <br /><br />
-        <TranslateText
-          pt="Profissional bilíngue, com fluência em inglês e experiência em ambientes internacionais. Atualmente aprofunda conhecimentos em backend, arquitetura de aplicações e cloud, com estudos em Python, Java, AWS, CI/CD e Docker, buscando evoluir como engenheira de software e contribuir para o desenvolvimento de aplicações escaláveis."
-          en="Bilingual professional, fluent in English with experience in international environments. Currently deepening knowledge in backend, application architecture, and cloud, with studies in Python, Java, AWS, CI/CD, and Docker, aiming to evolve as a software engineer and contribute to the development of scalable applications."
-          client:load
-        />
-      </p>
+      <div class="space-y-4 sm:space-y-6 text-xl xl:text-2xl text-zinc-500 text-balance">
+        <p>
+          <TranslateText
+            pt="Experiência no desenvolvimento de aplicações web e sistemas distribuídos de ponta a ponta, com foco em arquitetura escalável, APIs REST e integração entre front-end e back-end."
+            en="Experience developing web applications and end-to-end distributed systems, focused on scalable architecture, REST APIs, and front-end/back-end integration."
+            client:load
+          />
+        </p>
+        <p>
+          <TranslateText
+            pt="Especialização em Java e Spring Boot, atuando na construção de microsserviços, autenticação, mensageria com RabbitMQ, persistência com Spring Data JPA/Hibernate e modelagem de bancos relacionais (MySQL)."
+            en="Specialization in Java and Spring Boot, working on microservices, authentication, messaging with RabbitMQ, persistence with Spring Data JPA/Hibernate, and relational database modeling (MySQL)."
+            client:load
+          />
+        </p>
+        <p>
+          <TranslateText
+            pt="No front-end, desenvolvimento de interfaces modernas com React, Next.js, Angular, TypeScript, JavaScript e Tailwind CSS, incluindo Design Systems, integração com APIs e experiências responsivas."
+            en="On the front-end, development of modern interfaces with React, Next.js, Angular, TypeScript, JavaScript, and Tailwind CSS, including Design Systems, API integration, and responsive experiences."
+            client:load
+          />
+        </p>
+        <p>
+          <TranslateText
+            pt="Experiência complementar em infraestrutura e DevOps utilizando AWS, Docker, Kubernetes e CI/CD, além de versionamento com Git/GitHub, ambiente Linux e prototipação no Figma."
+            en="Complementary experience in infrastructure and DevOps using AWS, Docker, Kubernetes, and CI/CD, along with version control with Git/GitHub, Linux environments, and prototyping in Figma."
+            client:load
+          />
+        </p>
+        <p>
+          <TranslateText
+            pt="Atuação em equipes ágeis, aplicando Clean Code, SOLID, Design Patterns e princípios de arquitetura para entregar soluções escaláveis, performáticas e de alta qualidade."
+            en="Work within agile teams, applying Clean Code, SOLID, Design Patterns, and architectural principles to deliver scalable, high-performing, high-quality solutions."
+            client:load
+          />
+        </p>
+      </div>
     </div>
 
     <div class="space-y-2 text-base sm:text-lg">
       <h2 class="px-4 text-zinc-400 underline underline-offset-4 decoration-zinc-500">
-        <TranslateText pt="Conquistas" en="Achievements" client:load />
+        <TranslateText pt="Conquistas Relevantes" en="Relevant Achievements" client:load />
       </h2>
 
       <ul class="px-4 text-zinc-400 list-disc list-outside">
@@ -41,15 +65,6 @@ import TranslateText from "../components/TranslateText";
         </li>
         <li>
           <TranslateText
-            pt="Ciência da Computação - Uninassau (Previsão 2028)"
-            en="Computer Science - Uninassau (Expected 2028)"
-            client:load
-          />
-        </li>
-        <li>Node.JS with Express - Cursa (2026)</li>
-        <li>Prompt Engineering - ChatGPT (2026)</li>
-        <li>
-          <TranslateText
             pt="CC50 - Universidade de Harvard (2025)"
             en="CS50 - Harvard University (2025)"
             client:load
@@ -57,26 +72,21 @@ import TranslateText from "../components/TranslateText";
         </li>
         <li>
           <TranslateText
-            pt="IAs Generativas - Santander com MIT (2025)"
-            en="Generative AI - Santander with MIT (2025)"
-            client:load
-          />
-        </li>
-        <li>
-          <TranslateText
-            pt="Transformação Digital - Santander com MIT (2025)"
-            en="Digital Transformation - Santander with MIT (2025)"
-            client:load
-          />
-        </li>
-        <li>
-          <TranslateText
-            pt="Design Gráfico - Orango (2025)"
-            en="Graphic Design - Orango (2025)"
+            pt="Bootcamp AI Java Backend (2026)"
+            en="AI Java Backend Bootcamp (2026)"
             client:load
           />
         </li>
       </ul>
+
+      <a
+        href="https://www.linkedin.com/in/luiza-ferraz-leblanc/details/certifications/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-4 inline-block w-fit text-base sm:text-lg px-5 py-2 rounded-full transition-all duration-300 ease-in-out whitespace-nowrap text-zinc-100 hover:text-white bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20"
+      >
+        <TranslateText pt="Ver Certificações" en="View Certifications" client:load />
+      </a>
     </div>
   </div>
 </InfoLayout>

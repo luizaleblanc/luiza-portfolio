@@ -55,10 +55,17 @@ const pathname = Astro.url.pathname;
     </ExternalLink>
   </div>
 
-  <ExternalLink href="/about" openNewTab={false}>
+  <a href="/about" class="w-fit text-base text-zinc-500 hover:text-zinc-100 transition-colors cursor-pointer">
     <TranslateText pt="Sobre" en="About" client:load />
-  </ExternalLink>
-  <ExternalLink href="/contact" openNewTab={false}>
+  </a>
+  <a href="/contact" class="w-fit text-base text-zinc-500 hover:text-zinc-100 transition-colors cursor-pointer">
     <TranslateText pt="Contato" en="Contact" client:load />
-  </ExternalLink>
+  </a>
+  <a
+    href="/cv-luiza-leblanc.pdf"
+    download
+    class="w-fit text-base text-zinc-500 hover:text-zinc-100 transition-colors cursor-pointer"
+  >
+    <TranslateText pt="Baixar CV" en="Download CV" client:load />
+  </a>
 </footer>

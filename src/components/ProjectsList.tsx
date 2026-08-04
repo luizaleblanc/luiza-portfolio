@@ -9,6 +9,11 @@ type Project = {
   badge?: string;
 };
 
+const badgeTranslations: Record<string, string> = {
+  "In Development": "Em Desenvolvimento",
+  "In Production": "Em Produção",
+};
+
 export default function ProjectsList({ projects }: { projects: Project[] }) {
   const [lang, setLang] = useState<"pt" | "en">("pt");
 
@@ -42,8 +47,8 @@ export default function ProjectsList({ projects }: { projects: Project[] }) {
               <h2 className="text-3xl font-semibold text-zinc-100">{project.title}</h2>
               {project.badge && (
                 <span className="px-2 py-1 text-xs font-medium text-zinc-400 bg-zinc-800 border border-zinc-700 rounded-md">
-                  {lang === "pt" && project.badge === "In Development"
-                    ? "Em Desenvolvimento"
+                  {lang === "pt"
+                    ? badgeTranslations[project.badge] ?? project.badge
                     : project.badge}
                 </span>
               )}
