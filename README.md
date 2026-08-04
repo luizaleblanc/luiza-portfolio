@@ -1,3 +1,5 @@
+<img width="1890" height="1023" alt="image" src="https://github.com/user-attachments/assets/3977bbdd-9336-4dd1-a89a-19b7b24ce19f" />
+
 # Luiza LeBlanc - Personal Portfolio
 
 Portfólio oficial desenvolvido para apresentar meus projetos, habilidades e trajetória como Engenheira de Software Full-Stack Java, com forte atuação em back-end (Java/Spring Boot) e front-end (React, Next.js, Angular).
